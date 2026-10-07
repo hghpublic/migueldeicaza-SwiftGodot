@@ -104,9 +104,9 @@ public extension ExtensionInterface {
         true
     }
 
-    // Register any general Godot classes/methods here
+    // Register any general Godot classes/methods here. Anything registered here must also be
+    // unregistered on deinit, or a hot reload leaves it dangling in ClassDB.
     func initClasses() {
-        SignalProxy.initClass()
     }
 
     func setLibrary(_ library: UnsafeMutableRawPointer) {}
